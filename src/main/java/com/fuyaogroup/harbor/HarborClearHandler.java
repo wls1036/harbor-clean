@@ -77,12 +77,17 @@ public class HarborClearHandler {
                 }
             }
         }
+        System.out.println("保留镜像数目======>" + reserves.size());
+        System.out.println("删除镜像数目======>" + clears.size());
+        System.out.println("\r\n\r\n");
         System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<以下镜像将被保留>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println("\r\n\r\n");
         for (Image image : reserves) {
             System.out.println(String.format("%s/%s:%s", image.getProjectName(), image.getRepositoryName(), image.getTag()));
         }
         System.out.println("\r\n\r\n");
         System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<以下镜像将被删除>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println("\r\n\r\n");
         for (Image image : clears) {
             System.out.println(String.format("%s/%s:%s", image.getProjectName(), image.getRepositoryName(), image.getTag()));
         }
