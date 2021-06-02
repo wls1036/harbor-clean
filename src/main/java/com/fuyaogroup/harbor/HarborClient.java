@@ -21,6 +21,7 @@ public class HarborClient {
     private static final String API_GET_REPOSITORY = "/projects/%s/repositories?page_size=100&page=%d";
     private static final String API_GET_PROJECT = "/projects?page_size=100&page=%d";
     private static final String API_GET_ARTIFACT = "/projects/%s/repositories/%s/artifacts?page_size=100&page=%d&with_tag=true";
+    private static final String API_DELETE_IAMGE = "/projects/%s/repositories/%s/artifacts/%s";
 
     private String harborServer;
     private String userName;
@@ -72,6 +73,10 @@ public class HarborClient {
             }
         }
         return images;
+    }
+
+    public void deleteImage(Image image) {
+        this.requestRestApi("DELETE", API_DELETE_IAMGE, image.getProjectName(), image.getRepositoryName(), image.getDigest());
     }
 
     private String requestRestApi(String method, String api, Object... params) {

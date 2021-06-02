@@ -91,6 +91,14 @@ public class HarborClearHandler {
         for (Image image : clears) {
             System.out.println(String.format("%s/%s:%s", image.getProjectName(), image.getRepositoryName(), image.getTag()));
         }
+
+        System.out.println("\r\n\r\n");
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<开始删除镜像>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println("\r\n\r\n");
+        for (Image image : clears) {
+            System.out.println("删除镜像=====>" + image.getFullName());
+            this.client.deleteImage(image);
+        }
     }
 
 

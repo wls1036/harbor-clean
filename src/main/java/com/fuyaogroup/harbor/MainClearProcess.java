@@ -1,5 +1,7 @@
 package com.fuyaogroup.harbor;
 
+import com.fuyaogroup.harbor.model.Image;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -21,12 +23,20 @@ public class MainClearProcess {
         String harborServer = cmd[0];
         String harborAdmin = cmd[1];
         String harborPassword = cmd[2];
-//        String harborServer = "https://harbor-test.fuyaogroup.com";
-//        String harborAdmin = "admin";
-//        String harborPassword = "fysam12345";
+
         HarborClient client = new HarborClient(harborServer, harborAdmin, harborPassword);
         HarborClearHandler handler = new HarborClearHandler(client);
         handler.doClear(createClearPolicy(cmd));
+
+//        String harborServer = "https://harbor-test.fuyaogroup.com";
+//        String harborAdmin = "admin";
+//        String harborPassword = "fysam12345";
+//        HarborClient client = new HarborClient(harborServer, harborAdmin, harborPassword);
+//        Image image = new Image();
+//        image.setProjectName("k2");
+//        image.setRepositoryName("pai-core-interface");
+//        image.setDigest("sha256:a1b2a59492d2ab8465e713e6806de162232c2999528c2c3943bc57c74e7c6121");
+//        client.deleteImage(image);
     }
 
     /**
