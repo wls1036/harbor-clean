@@ -31,12 +31,12 @@ public class HarborClearHandler {
         List<Image> clears = new ArrayList<Image>();
         for (Project project : projects) {
             if (policy.skipProject(project)) {
-                System.out.println("跳过项目===>"+project.getName());
+                System.out.println("跳过项目===>" + project.getName());
                 continue;
             }
             for (Repository repository : project.getRepositories()) {
                 if (policy.skipRepository(repository)) {
-                    System.out.println("跳过仓库===>"+repository.getName());
+                    System.out.println("跳过仓库===>" + repository.getName());
                     continue;
                 }
 
@@ -77,11 +77,12 @@ public class HarborClearHandler {
                 }
             }
         }
-        System.out.println("以下镜像将被保留:");
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<以下镜像将被保留>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         for (Image image : reserves) {
             System.out.println(String.format("%s/%s:%s", image.getProjectName(), image.getRepositoryName(), image.getTag()));
         }
-        System.out.println("以下镜像将被删除:");
+        System.out.println("\r\n\r\n");
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<以下镜像将被删除>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         for (Image image : clears) {
             System.out.println(String.format("%s/%s:%s", image.getProjectName(), image.getRepositoryName(), image.getTag()));
         }
