@@ -17,6 +17,7 @@ public class MainClearProcess {
             MainClearProcess.help();
             return;
         }
+        pringArgs(cmd);
         String harborServer = cmd[0];
         String harborAdmin = cmd[1];
         String harborPassword = cmd[2];
@@ -51,6 +52,15 @@ public class MainClearProcess {
             policy.setWhiteRepositories(skipRepository);
         }
         return policy;
+    }
+
+    private static void pringArgs(String[] cmd) {
+        System.out.println("harborServer===>" + cmd[0]);
+        System.out.println("admin===>" + cmd[1]);
+        System.out.println("password===>" + cmd[2]);
+        System.out.println("reserverCount===>" + cmd[3]);
+        System.out.println("projectWhite===>" + cmd[4]);
+        System.out.println("repositoryWhite===>" + cmd[5]);
     }
 
     private static void help() {
