@@ -22,4 +22,4 @@ you can create a jenkins job item,and trigger with params
 
 ## more
 
-for more details, vist [here](https://zhengjianfeng.cn/?p=551)
+for more details, visit [here](https://zhengjianfeng.cn/?p=551)
